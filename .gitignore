@@ -31,6 +31,8 @@ Thumbs.db
 # WordPress
 uploads/
 *.log
+backup.sql
+backup-prod.sql
 
 # Node
 node_modules/
