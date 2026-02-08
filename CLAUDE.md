@@ -12,30 +12,45 @@ This is a WordPress block theme based on Frost, featuring a clean, minimal desig
 - **Development Commands**:
   - `npm run dev` - Start local environment
   - `npm run stop` - Stop local environment
+  - `npm run restart` - Restart and update environment
   - `npm run reset` - Clean all data
+  - `npm run destroy` - Completely remove environment
   - `npm run logs` - View environment logs
-  - `npm run wp` - Run WP-CLI commands
+  - `npm run wp` - Run WP-CLI commands (local)
+  - `npm run wp:prod` - Run WP-CLI commands (production)
+  - `npm run flush` - Flush cache and rewrite rules
 
-## Deployment (OVH SSH)
+## Deployment (SSH)
 
 ### Setup
 1. Copy `.env.example` to `.env`
-2. Fill in your OVH SSH credentials:
+2. Fill in your SSH credentials:
    ```
-   SSH_USER=your-ovh-username
-   SSH_HOST=ssh.cluster0XX.hosting.ovh.net
-   SSH_PATH=/home/your-username/www/wp-content/themes/costard-cravate
+   SSH_USER=your-username
+   SSH_HOST=your-server.com
+   SSH_PATH=/path/to/wp-content/themes/costard-cravate
    ```
 3. Run `npm install` to get dependencies
 
 ### Deployment Commands
-- `npm run deploy` - Deploy theme to OVH via SSH + rsync
+- `npm run deploy` - Deploy theme via rsync (excludes uploads)
 - `npm run deploy:dry` - Preview deployment (no changes made)
+- `npm run deploy:force` - Deploy with --delete (removes extra files on server)
+- `npm run ssh` - Connect to server via SSH
 
-### Database & Content Commands
+### Database Commands
 - `npm run db:export` - Export local database to `backup.sql`
 - `npm run db:import` - Import `backup.sql` into local environment
-- `npm run export` - Export content as WordPress XML file
+- `npm run db:pull` - Pull production database to `backup-prod.sql`
+
+### Uploads/Media Commands
+- `npm run uploads:pull` - Pull uploads folder from production
+
+### Plugin Management
+- `npm run plugins:list` - List active plugins
+- `npm run plugins:export` - Export active plugins to `plugins.txt`
+- `npm run plugins:install` - Install plugins from `plugins.txt` locally
+- `npm run plugins:install:prod` - Install plugins on production server
 
 ## Code Standards for Frontend Development
 

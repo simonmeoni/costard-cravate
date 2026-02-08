@@ -1,34 +1,31 @@
 {
   "name": "costard-cravate",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "wp-env start",
     "stop": "wp-env stop",
+    "restart": "wp-env stop && wp-env start --update",
     "reset": "wp-env clean all",
+    "destroy": "wp-env destroy",
     "logs": "wp-env logs",
     "wp": "wp-env run cli wp",
-    "deploy": "dotenv -- bash -c 'rsync -avz --delete --exclude node_modules --exclude .git --exclude .env --exclude .wp-env.json ./ $SSH_USER@$SSH_HOST:$SSH_PATH'",
-    "deploy:dry": "dotenv -- bash -c 'rsync -avzn --delete --exclude node_modules --exclude .git --exclude .env --exclude .wp-env.json ./ $SSH_USER@$SSH_HOST:$SSH_PATH'",
-    "db:export": "wp-env run cli wp db export - > backup.sql",
-    "db:import": "wp-env run cli wp db import /var/www/html/backup.sql",
-    "export": "wp-env run cli wp export --dir=/var/www/html && mv $(ls -t *.xml 2>/dev/null | head -1) export.xml 2>/dev/null || echo 'Export created in wp-env'"
+    "wp:prod": "dotenv -- bash -c 'ssh $SSH_USER@$SSH_HOST \"cd $SSH_PATH/../../.. && wp $1\"' --",
+    "flush": "wp-env run cli wp cache flush && wp-env run cli wp rewrite flush",
+    "deploy": "dotenv -- bash -c 'rsync -avz --exclude node_modules --exclude .git --exclude .env --exclude .wp-env.json --exclude uploads ./ $SSH_USER@$SSH_HOST:$SSH_PATH'",
+    "deploy:dry": "dotenv -- bash -c 'rsync -avzn --exclude node_modules --exclude .git --exclude .env --exclude .wp-env.json --exclude uploads ./ $SSH_USER@$SSH_HOST:$SSH_PATH'",
+    "deploy:force": "dotenv -- bash -c 'rsync -avz --delete --exclude node_modules --exclude .git --exclude .env --exclude uploads ./ $SSH_USER@$SSH_HOST:$SSH_PATH'",
+    "ssh": "dotenv -- bash -c 'ssh $SSH_USER@$SSH_HOST'",
+    "db:export": "wp-env run cli wp db export /var/www/html/backup.sql && docker cp $(docker ps -qf 'name=wordpress'):/var/www/html/backup.sql ./backup.sql",
+    "db:import": "docker cp ./backup.sql $(docker ps -qf 'name=wordpress'):/var/www/html/backup.sql && wp-env run cli wp db import /var/www/html/backup.sql",
+    "db:pull": "dotenv -- bash -c 'ssh $SSH_USER@$SSH_HOST \"cd $SSH_PATH/../../.. && wp db export -\" > backup-prod.sql'",
+    "uploads:pull": "dotenv -- bash -c 'rsync -avz $SSH_USER@$SSH_HOST:$SSH_PATH/../uploads/ ./uploads/'",
+    "plugins:list": "wp-env run cli wp plugin list --status=active",
+    "plugins:export": "wp-env run cli wp plugin list --status=active --field=name > plugins.txt",
+    "plugins:install": "cat plugins.txt | xargs -I {} wp-env run cli wp plugin install {} --activate",
+    "plugins:install:prod": "dotenv -- bash -c 'cat plugins.txt | xargs -I {} ssh $SSH_USER@$SSH_HOST \"cd $SSH_PATH/../../.. && wp plugin install {} --activate\"'"
   },
   "devDependencies": {
     "@wordpress/env": "^10.0.0",
-    "dotenv-cli": "^7.4.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/simonmeoni/costard-cravate.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/simonmeoni/costard-cravate/issues"
-  },
-  "homepage": "https://github.com/simonmeoni/costard-cravate#readme"
+    "dotenv-cli": "^7.0.0"
+  }
 }
