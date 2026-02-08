@@ -1,10 +1,10 @@
 /*
-Theme Name: Frost
+Theme Name: Costard Cravate
 Theme URI: https://frostwp.com/
 Author: WP Engine
 Author URI: https://wpengine.com/
-Description: With its clean, minimal design and powerful feature set, Frost enables agencies to build stylish and sophisticated WordPress websites. Frost is a masterpiece of design and functionality. It features a range of valuable patterns, including hero and portfolio sections, prominent call-to-action buttons, and customer testimonials. Whether you’re building a website for your business, personal brand, or creative project, Frost is perfect for anyone looking to launch quickly and efficiently.
-Tags: block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, full-site-editing, one-column, template-editing, threaded-comments, translation-ready, wide-blocks
+Description: A minimalist WordPress block theme for Costard Cravate, a professional package design company. Features warm earth tone pastels, full site editing, and a clean design system perfect for showcasing creative work. Built on Frost with custom patterns for portfolio, services, and testimonials.
+Tags: block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, full-site-editing, one-column, portfolio, design, agency, template-editing, threaded-comments, translation-ready, wide-blocks
 Requires at least: 6.9
 Tested up to: 6.9
 Requires PHP: 7.2
@@ -172,4 +172,281 @@ textarea {
 		flex-direction: column-reverse;
 	}
 
+}
+
+/* Animations & Transitions
+---------------------------------------- */
+
+/* -- Keyframes -- */
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* -- Button Animations -- */
+
+.wp-element-button,
+.wp-block-button__link {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+}
+
+.wp-element-button:hover,
+.wp-block-button__link:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(201, 173, 167, 0.3);
+}
+
+.wp-element-button:active,
+.wp-block-button__link:active {
+	transform: translateY(0);
+}
+
+/* -- Card Animations -- */
+
+.wp-block-column {
+	animation: fadeInUp 0.6s ease-out both;
+}
+
+.wp-block-column:nth-child(1) {
+	animation-delay: 0.1s;
+}
+
+.wp-block-column:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+.wp-block-column:nth-child(3) {
+	animation-delay: 0.3s;
+}
+
+.wp-block-column:hover {
+	transform: translateY(-4px);
+	transition: transform 0.3s ease;
+}
+
+/* -- Border Cards -- */
+
+.has-border-color {
+	transition: all 0.3s ease;
+}
+
+.has-border-color:hover {
+	border-color: var(--wp--preset--color--primary) !important;
+	box-shadow: 0 8px 24px rgba(201, 173, 167, 0.15);
+}
+
+/* -- Image Animations -- */
+
+.wp-block-image {
+	animation: scaleIn 0.8s ease-out both;
+}
+
+.wp-block-image img {
+	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wp-block-image:hover img {
+	transform: scale(1.05);
+}
+
+/* -- Gallery Animations -- */
+
+.wp-block-gallery .wp-block-image {
+	animation: fadeIn 0.6s ease-out both;
+}
+
+.wp-block-gallery .wp-block-image:nth-child(1) {
+	animation-delay: 0.1s;
+}
+
+.wp-block-gallery .wp-block-image:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+.wp-block-gallery .wp-block-image:nth-child(3) {
+	animation-delay: 0.3s;
+}
+
+.wp-block-gallery .wp-block-image:nth-child(4) {
+	animation-delay: 0.4s;
+}
+
+/* -- Heading Animations -- */
+
+.wp-block-heading {
+	animation: fadeInUp 0.6s ease-out both;
+}
+
+.has-text-align-center.wp-block-heading {
+	animation: fadeIn 0.8s ease-out both;
+}
+
+/* -- Group Animations -- */
+
+.wp-block-group {
+	animation: fadeIn 0.8s ease-out both;
+}
+
+.alignfull.wp-block-group {
+	animation: fadeInUp 0.6s ease-out both;
+}
+
+/* -- Testimonials Animations -- */
+
+.wp-block-column.has-border-color,
+.wp-block-column.has-contrast-border-color,
+.wp-block-column.has-contrast-background-color {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wp-block-column.has-border-color:hover,
+.wp-block-column.has-contrast-border-color:hover,
+.wp-block-column.has-contrast-background-color:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 12px 28px rgba(58, 58, 58, 0.12);
+}
+
+/* -- Navigation Animations -- */
+
+.wp-block-navigation-item {
+	transition: all 0.2s ease;
+}
+
+.wp-block-navigation-item a {
+	position: relative;
+}
+
+.wp-block-navigation-item a::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: var(--wp--preset--color--primary);
+	transition: width 0.3s ease;
+}
+
+.wp-block-navigation-item a:hover::after {
+	width: 100%;
+}
+
+/* -- Spacer for Staggered Animations -- */
+
+.wp-block-spacer + * {
+	animation: fadeInUp 0.6s ease-out both;
+}
+
+/* -- Hero Section Special Effects -- */
+
+.welcome .wp-block-heading {
+	animation: slideInLeft 0.8s ease-out both;
+}
+
+.welcome .wp-block-paragraph {
+	animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.welcome .wp-block-buttons {
+	animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+/* -- CTA Section Pulse Effect -- */
+
+.wp-block-group.has-border-color .wp-element-button:hover,
+.wp-block-group.has-contrast-border-color .wp-element-button:hover {
+	animation: pulse 0.6s ease;
+}
+
+@keyframes pulse {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+}
+
+/* -- Smooth Background Transitions -- */
+
+.has-background,
+.has-base-background-color,
+.has-contrast-background-color,
+.has-neutral-background-color,
+.has-primary-background-color {
+	transition: background-color 0.3s ease;
+}
+
+/* -- Link Hover Effects -- */
+
+a:not(.wp-element-button):not(.wp-block-button__link) {
+	transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:not(.wp-element-button):not(.wp-block-button__link):hover {
+	opacity: 0.8;
+	color: var(--wp--preset--color--primary);
+}
+
+/* -- Reduce Motion for Accessibility -- */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
 }

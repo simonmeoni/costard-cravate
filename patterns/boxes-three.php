@@ -1,63 +1,42 @@
 <?php
 /**
- * Title: Boxes with heading, text, button.
+ * Title: Three service boxes
  * Slug: frost/boxes-three
  * Categories: featured
  */
 ?>
 <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide">
-	<!-- wp:columns -->
+	<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|small"}}}} -->
 	<div class="wp-block-columns">
-		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}},"border":{"width":"1px"}},"borderColor":"contrast"} -->
-		<div class="wp-block-column has-border-color has-contrast-border-color" style="border-width:1px;padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)">
-			<!-- wp:heading {"level":3,"anchor":"sample-heading-1"} -->
-			<h3 class="wp-block-heading" id="sample-heading-1"><?php echo esc_html__( 'Build with Frost', 'frost' ); ?></h3>
+		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","right":"var:preset|spacing|small","bottom":"var:preset|spacing|medium","left":"var:preset|spacing|small"}},"border":{"radius":"8px"}},"backgroundColor":"base","className":"is-style-shadow-light"} -->
+		<div class="wp-block-column is-style-shadow-light has-base-background-color has-background" style="border-radius:8px;padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--small)">
+			<!-- wp:heading {"level":3,"anchor":"brand-identity-packaging","fontSize":"large"} -->
+			<h3 class="wp-block-heading has-large-font-size" id="brand-identity-packaging"><?php echo esc_html__( 'Brand Identity Packaging', 'frost' ); ?></h3>
 			<!-- /wp:heading -->
-			<!-- wp:paragraph -->
-			<p><?php echo esc_html__( 'Frost is a powerful WordPress theme created for agencies and professional website builders.', 'frost' ); ?></p>
+			<!-- wp:paragraph {"fontSize":"small"} -->
+			<p class="has-small-font-size"><?php echo esc_html__( 'Custom designs that authentically reflect your brand\'s values and vision', 'frost' ); ?></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:buttons -->
-			<div class="wp-block-buttons">
-				<!-- wp:button {"style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--medium)"><?php echo esc_html__( 'Learn More', 'frost' ); ?></a></div>
-				<!-- /wp:button -->
-			</div>
-			<!-- /wp:buttons -->
 		</div>
 		<!-- /wp:column -->
-		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}},"border":{"width":"1px"}},"borderColor":"contrast"} -->
-		<div class="wp-block-column has-border-color has-contrast-border-color" style="border-width:1px;padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)">
-			<!-- wp:heading {"level":3,"anchor":"sample-heading-1"} -->
-			<h3 class="wp-block-heading" id="sample-heading-1"><?php echo esc_html__( 'Build with Frost', 'frost' ); ?></h3>
+		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","right":"var:preset|spacing|small","bottom":"var:preset|spacing|medium","left":"var:preset|spacing|small"}},"border":{"radius":"8px"}},"backgroundColor":"base","className":"is-style-shadow-light"} -->
+		<div class="wp-block-column is-style-shadow-light has-base-background-color has-background" style="border-radius:8px;padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--small)">
+			<!-- wp:heading {"level":3,"anchor":"sustainable-solutions","fontSize":"large"} -->
+			<h3 class="wp-block-heading has-large-font-size" id="sustainable-solutions"><?php echo esc_html__( 'Sustainable Solutions', 'frost' ); ?></h3>
 			<!-- /wp:heading -->
-			<!-- wp:paragraph -->
-			<p><?php echo esc_html__( 'Frost is a powerful WordPress theme created for agencies and professional website builders.', 'frost' ); ?></p>
+			<!-- wp:paragraph {"fontSize":"small"} -->
+			<p class="has-small-font-size"><?php echo esc_html__( 'Eco-friendly materials and innovative designs that minimize environmental impact', 'frost' ); ?></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:buttons -->
-			<div class="wp-block-buttons">
-				<!-- wp:button {"style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--medium)"><?php echo esc_html__( 'Learn More', 'frost' ); ?></a></div>
-				<!-- /wp:button -->
-			</div>
-			<!-- /wp:buttons -->
 		</div>
 		<!-- /wp:column -->
-		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}},"border":{"width":"1px"}},"borderColor":"contrast"} -->
-		<div class="wp-block-column has-border-color has-contrast-border-color" style="border-width:1px;padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)">
-			<!-- wp:heading {"level":3,"anchor":"sample-heading-1"} -->
-			<h3 class="wp-block-heading" id="sample-heading-1"><?php echo esc_html__( 'Build with Frost', 'frost' ); ?></h3>
+		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","right":"var:preset|spacing|small","bottom":"var:preset|spacing|medium","left":"var:preset|spacing|small"}},"border":{"radius":"8px"}},"backgroundColor":"base","className":"is-style-shadow-light"} -->
+		<div class="wp-block-column is-style-shadow-light has-base-background-color has-background" style="border-radius:8px;padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--small)">
+			<!-- wp:heading {"level":3,"anchor":"premium-product-packaging","fontSize":"large"} -->
+			<h3 class="wp-block-heading has-large-font-size" id="premium-product-packaging"><?php echo esc_html__( 'Premium Product Packaging', 'frost' ); ?></h3>
 			<!-- /wp:heading -->
-			<!-- wp:paragraph -->
-			<p><?php echo esc_html__( 'Frost is a powerful WordPress theme created for agencies and professional website builders.', 'frost' ); ?></p>
+			<!-- wp:paragraph {"fontSize":"small"} -->
+			<p class="has-small-font-size"><?php echo esc_html__( 'Luxury packaging that elevates high-end products and creates unforgettable unboxing experiences', 'frost' ); ?></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:buttons -->
-			<div class="wp-block-buttons">
-				<!-- wp:button {"style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--medium)"><?php echo esc_html__( 'Learn More', 'frost' ); ?></a></div>
-				<!-- /wp:button -->
-			</div>
-			<!-- /wp:buttons -->
 		</div>
 		<!-- /wp:column -->
 	</div>

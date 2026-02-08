@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Header with site title, navigation.
+ * Title: Header with Costard Cravate branding and navigation
  * Slug: frost/header-default
  * Categories: header
  * Block Types: core/template-part/header
@@ -11,7 +11,12 @@
 	<!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
 	<div class="wp-block-group alignwide">
 		<!-- wp:site-title /-->
-		<!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true}} /-->
+		<!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true},"overlayMenu":"never"} -->
+			<!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'Services', 'frost' ); ?>","url":"/?page_id=10","kind":"custom","isTopLevelLink":true} /-->
+			<!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'Portfolio', 'frost' ); ?>","url":"/?page_id=11","kind":"custom","isTopLevelLink":true} /-->
+			<!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'About', 'frost' ); ?>","url":"/?page_id=9","kind":"custom","isTopLevelLink":true} /-->
+			<!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'Contact', 'frost' ); ?>","url":"/?page_id=12","kind":"custom","isTopLevelLink":true} /-->
+		<!-- /wp:navigation -->
 	</div>
 	<!-- /wp:group -->
 </div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Portfolio with heading, text, images.
+ * Title: Portfolio showcase with work samples
  * Slug: frost/portfolio
  * Categories: featured
  */
@@ -12,14 +12,14 @@
 		<!-- wp:column {"verticalAlignment":"center","width":""} -->
 		<div class="wp-block-column is-vertically-aligned-center">
 			<!-- wp:heading {"fontSize":"x-large","anchor":"sample-heading"} -->
-			<h2 class="wp-block-heading has-x-large-font-size" id="sample-heading"><?php echo esc_html__( 'Build with Frost', 'frost' ); ?></h2>
+			<h2 class="wp-block-heading has-x-large-font-size" id="sample-heading"><?php echo esc_html__( 'Featured Work', 'frost' ); ?></h2>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph -->
-			<p><?php echo esc_html__( 'Frost is a powerful WordPress theme created for agencies and professional website builders. With its clean, minimal design, Frost provides the perfect canvas for sophisticated websites.', 'frost' ); ?></p>
+			<p><?php echo esc_html__( 'Showcasing our expertise across food & beverage, cosmetics, luxury goods, and artisan products', 'frost' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:buttons -->
 			<div class="wp-block-buttons"><!-- wp:button -->
-			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'View Project', 'frost' ); ?></a></div>
+			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/?page_id=11"><?php echo esc_html__( 'View Full Portfolio', 'frost' ); ?></a></div>
 			<!-- /wp:button --></div>
 			<!-- /wp:buttons -->
 		</div>

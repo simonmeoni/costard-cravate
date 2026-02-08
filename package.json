@@ -8,10 +8,16 @@
     "stop": "wp-env stop",
     "reset": "wp-env clean all",
     "logs": "wp-env logs",
-    "wp": "wp-env run cli wp"
+    "wp": "wp-env run cli wp",
+    "deploy": "dotenv -- bash -c 'rsync -avz --delete --exclude node_modules --exclude .git --exclude .env --exclude .wp-env.json ./ $SSH_USER@$SSH_HOST:$SSH_PATH'",
+    "deploy:dry": "dotenv -- bash -c 'rsync -avzn --delete --exclude node_modules --exclude .git --exclude .env --exclude .wp-env.json ./ $SSH_USER@$SSH_HOST:$SSH_PATH'",
+    "db:export": "wp-env run cli wp db export - > backup.sql",
+    "db:import": "wp-env run cli wp db import /var/www/html/backup.sql",
+    "export": "wp-env run cli wp export --dir=/var/www/html && mv $(ls -t *.xml 2>/dev/null | head -1) export.xml 2>/dev/null || echo 'Export created in wp-env'"
   },
   "devDependencies": {
-    "@wordpress/env": "^10.0.0"
+    "@wordpress/env": "^10.0.0",
+    "dotenv-cli": "^7.4.4"
   },
   "repository": {
     "type": "git",
