@@ -24,3 +24,17 @@ Thumbs.db
 *.code-workspace
 .idea
 .vscode
+
+# WordPress
+uploads/
+*.log
+
+# Node
+node_modules/
+
+# wp-env
+.wp-env/
+
+# OS
+.DS_Store
+Thumbs.db
