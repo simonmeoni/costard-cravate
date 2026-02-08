@@ -13,7 +13,29 @@ This is a WordPress block theme based on Frost, featuring a clean, minimal desig
   - `npm run dev` - Start local environment
   - `npm run stop` - Stop local environment
   - `npm run reset` - Clean all data
+  - `npm run logs` - View environment logs
   - `npm run wp` - Run WP-CLI commands
+
+## Deployment (OVH SSH)
+
+### Setup
+1. Copy `.env.example` to `.env`
+2. Fill in your OVH SSH credentials:
+   ```
+   SSH_USER=your-ovh-username
+   SSH_HOST=ssh.cluster0XX.hosting.ovh.net
+   SSH_PATH=/home/your-username/www/wp-content/themes/costard-cravate
+   ```
+3. Run `npm install` to get dependencies
+
+### Deployment Commands
+- `npm run deploy` - Deploy theme to OVH via SSH + rsync
+- `npm run deploy:dry` - Preview deployment (no changes made)
+
+### Database & Content Commands
+- `npm run db:export` - Export local database to `backup.sql`
+- `npm run db:import` - Import `backup.sql` into local environment
+- `npm run export` - Export content as WordPress XML file
 
 ## Code Standards for Frontend Development
 
